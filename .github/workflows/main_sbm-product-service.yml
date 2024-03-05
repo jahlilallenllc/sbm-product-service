@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/build/libs/product-service-0.0.1-SNAPSHOT.jar'
+          path: '${{ github.workspace }}/build/libs/*.jar'
 
   deploy:
     runs-on: windows-latest
@@ -65,5 +65,5 @@ jobs:
         with:
           app-name: 'sbm-product-service'
           slot-name: 'Production'
-          package: '/build/libs/product-service-0.0.1-SNAPSHOT.jar'
+          package: '/build/libs/*.jar'
           
